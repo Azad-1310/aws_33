@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events - Together Culture</title>
+  <!-- Global styles -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <!-- Events page specific styles -->
+  <link rel="stylesheet" href="{% static 'css/events.css' %}">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <nav>
+        <!-- Logo: Clicking returns to the homepage -->
+        <a href="{% url 'homepage' %}" class="logo">Together Culture</a>
+        <!-- Back to Home button -->
+        <a href="{% url 'homepage' %}" class="cta-button">Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <h1>Upcoming Events</h1>
+      
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <form id="filterForm">
+          <input type="text" id="interestFilter" placeholder="Search by interest...">
+          <input type="date" id="dateFilter">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <!-- All Events Section -->
+      <section id="allEvents">
+        <h2>All Upcoming Events</h2>
+        <div id="eventsList" class="events-list">
+          <!-- All events rendered dynamically -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="{% static 'js/events.js' %}"></script>
+</body>
+</html>
